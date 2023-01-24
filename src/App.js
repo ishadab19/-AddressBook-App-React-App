@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import AddressBookForm from "./components/AddressBookForm";
+import { Routes, Route, Router } from "react-router-dom";
 import './App.css';
+import AddressBookHome from "./components/AddressBookHome";
+import Header from "./Header";
+//import { Router } from "express";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      
+      <Routes>
+
+        <Route path="/form" element={<AddressBookForm />} />
+        <Route path="/" element={<AddressBookHome />} />
+        <Route path="/form/:id" element={<AddressBookForm />} />
+
+
+      </Routes>
     </div>
   );
 }
